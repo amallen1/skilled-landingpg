@@ -1,10 +1,10 @@
 # Frontend Mentor - Skilled e-learning landing page
 
+## Welcome! 👋
+
 This is a solution to the [Skilled e-learning landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q).
 
 ![Design preview for the Skilled e-learning landing page coding challenge](./preview.jpg)
-
-## Welcome! 👋
 
 ## Table of contents
 

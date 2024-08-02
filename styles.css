@@ -19,7 +19,7 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background: linear-gradient(var(--white), #f0f2ff);
+  background: linear-gradient(to bottom, var(--white), #f0f2ff);
 }
 
 h1 {
@@ -65,10 +65,6 @@ header nav {
   width: 89px;
 }
 
-img {
-  max-width: 100%;
-}
-
 button {
   font-size: 1rem;
   line-height: 28px;
@@ -93,12 +89,12 @@ main {
 }
 
 .hero-content {
-  margin-bottom: 2.875rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-text {
-    margin-bottom: 1.5rem;
-  }
+  margin-bottom: 1.5rem;
+}
 
 .btn--hero {
   background: linear-gradient(
@@ -108,8 +104,25 @@ main {
   padding: 0.9375rem 2.375rem;
 }
 
-.hero-img {
+.hero-img-container {
   text-align: center;
+}
+.hero-mobile {
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-tablet-img {
+  display: none;
+}
+
+.hero-desktop {
+  display: none;
+}
+
+.grid {
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .banner {
@@ -174,4 +187,59 @@ footer {
 
 .attribution a {
   color: var(--pink-400);
+}
+
+@media (min-width: 48em) {
+  header {
+    padding: 1.5rem 2.5rem 0rem;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  main {
+    padding: 0rem 2.5rem 0rem;
+  }
+
+  .hero-section {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 5rem 0rem 12rem;
+  }
+
+  .hero-content {
+    padding-right: 15px;
+  }
+
+  .hero-mobile {
+    display: none;
+  }
+
+  .hero-img-container {
+    position: relative;
+  }
+  .hero-tablet-img {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: scale(1) translate(49%, -36%);
+  }
+
+  .grid {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+  }
+
+  .banner {
+    padding-top: 3.5rem;
+  }
+
+  footer {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
