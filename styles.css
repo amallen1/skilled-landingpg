@@ -22,6 +22,12 @@ body {
   background: linear-gradient(to bottom, var(--white), #f0f2ff);
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 800;
+}
+
 h1 {
   font-size: 2.5rem;
   color: var(--blue-400);
@@ -30,18 +36,18 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 32px;
   color: var(--white);
 }
 
 h3 {
   color: var(--blue-400);
   font-size: 1.25rem;
-  font-weight: 800;
   margin-bottom: 1rem;
 }
 
-p {
+.hero-text,
+.info-card__text {
   color: var(--gray-100);
   line-height: 26px;
   font-weight: 500;
@@ -73,6 +79,7 @@ button {
   border-radius: 28px;
   font-weight: 700;
   font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.15s ease-in;
 }
 
 button:hover {
@@ -82,6 +89,10 @@ button:hover {
 .btn--nav {
   background-color: var(--blue-400);
   padding: 0.5625rem 1.5rem 0.6875rem;
+}
+
+.btn--nav:hover {
+  background-color: var(--blue-200);
 }
 
 main {
@@ -104,9 +115,14 @@ main {
   padding: 0.9375rem 2.375rem;
 }
 
+.btn--hero:hover {
+  opacity: 75%;
+}
+
 .hero-img-container {
   text-align: center;
 }
+
 .hero-mobile {
   width: 100%;
   max-width: 500px;
@@ -116,7 +132,7 @@ main {
   display: none;
 }
 
-.hero-desktop {
+.hero-desktop-img {
   display: none;
 }
 
@@ -173,13 +189,31 @@ footer {
     var(--secondary-gradient-end)
   );
   padding: 0.5625rem 1.5rem;
+  position: relative;
+}
+
+.btn--footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 28px;
+  background: var(--white);
+  opacity: 0;
+  transition: opacity ease 0.5s;
+}
+
+.btn--footer:hover::before {
+  opacity: 25%;
 }
 
 .attribution {
   position: absolute;
   left: 0px;
   bottom: 0px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--white);
   width: 100%;
   text-align: center;
@@ -199,7 +233,7 @@ footer {
   }
 
   main {
-    padding: 0rem 2.5rem 0rem;
+    padding: 0rem 2.5rem 2.5rem;
   }
 
   .hero-section {
@@ -210,6 +244,7 @@ footer {
 
   .hero-content {
     padding-right: 15px;
+    padding-top: 1rem;
   }
 
   .hero-mobile {
@@ -225,6 +260,7 @@ footer {
     right: 0px;
     top: 0px;
     transform: scale(1) translate(49%, -36%);
+    z-index: -1;
   }
 
   .grid {
@@ -241,5 +277,84 @@ footer {
   footer {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .attribution {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 75em) {
+  header,
+  main,
+  footer {
+    padding-left: 165px;
+    padding-right: 165px;
+  }
+
+  .logo {
+    width: 111px;
+  }
+
+  main {
+    padding-bottom: 6.25rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    max-width: 457px;
+  }
+
+  .hero-text {
+    max-width: 457px;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .hero-text,
+  button,
+  .info-card__text,
+  .info-card__link {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+
+  .btn--nav {
+    padding: 0.875rem 2rem;
+  }
+
+  .hero-section {
+    padding-bottom: 14rem;
+  }
+
+  .hero-content {
+    padding-top: 4rem;
+    padding-right: 0px;
+  }
+
+  .hero-tablet-img {
+    display: none;
+  }
+
+  .hero-desktop-img {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: scale(1) translate(49%, -36%);
+    z-index: -1;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 56px;
+    column-gap: 30px;
+  }
+
+  .info-card {
+    padding: 4rem 2rem 2.5rem;
   }
 }
