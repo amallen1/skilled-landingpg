@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/skilled-landing-page---htmlcss-7LG61Bmz_z/)
 - [Live Site](https://profound-dusk-e19896.netlify.app/)
 
 ## My process
